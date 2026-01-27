@@ -23,8 +23,12 @@ class moodle_project_setup {
      *
      * @return string|false Absolute path to vendor/moodle/moodle or false if not found
      */
-    public static function get_vendor_moodle() {
+    public static function get_vendor_moodle_core() {
         return realpath(__DIR__ . '/vendor/moodle/moodle');
+    }
+
+    public static function get_vendor_moodle_plugin() {
+        return realpath(__DIR__ . '/vendor/moodle_plugin');
     }
 
     /**
@@ -103,28 +107,33 @@ class moodle_project_setup {
      * @return void
      */
     public static function rrCopy(string $src, string $dst): void {
-        if (!is_dir($src)) {
-            return;
-        }
-        $excludeRemovePath = self::get_exclude_remove_paths();
-        @mkdir($dst, 0777, true);
-        foreach (scandir($src) as $item) {
-            if ($item === '.' || $item === '..') {
-                continue;
+        try {
+            if (!is_dir($src)) {
+                return;
             }
-            $srcPath = $src . DIRECTORY_SEPARATOR . $item;
-            $dstPath = $dst . DIRECTORY_SEPARATOR . $item;
+            $excludeRemovePath = self::get_exclude_remove_paths();
+            @mkdir($dst, 0777, true);
+            foreach (scandir($src) as $item) {
+                if ($item === '.' || $item === '..') {
+                    continue;
+                }
+                $srcPath = $src . DIRECTORY_SEPARATOR . $item;
+                $dstPath = $dst . DIRECTORY_SEPARATOR . $item;
 
-            if (in_array(realpath($dstPath), $excludeRemovePath, true)) {
-                continue;
-            }
+                if (in_array(realpath($dstPath), $excludeRemovePath, true)) {
+                    continue;
+                }
 
-            if (is_dir($srcPath)) {
-                self::rrCopy($srcPath, $dstPath);
-            } else {
-                copy($srcPath, $dstPath);
-                chmod($dstPath, fileperms($srcPath));
+                if (is_dir($srcPath)) {
+                    self::rrCopy($srcPath, $dstPath);
+                } else {
+                    copy($srcPath, $dstPath);
+                    chmod($dstPath, fileperms($srcPath));
+                }
             }
+        } catch (\Throwable $th) {
+            echo "Error :: " . $th->getMessage() . " \n";
+            exit(1);
         }
     }
 
@@ -165,4 +174,37 @@ class moodle_project_setup {
             @rmdir($dir);
         }
     }
+
+
+    /**
+     * 
+     */
+    public static function manage_moodle_core_files() {
+        echo "➡️ Copying Moodle core files...\n";
+        self::rrCopy(self::get_vendor_moodle_core(), self::get_moodle_dir());
+        echo "✅ Completed copying Moodle Core files. \n";
+    }
+
+
+    /**
+     * 
+     */
+    public static function manage_moodle_plugins_files() {
+        echo "➡️ Copying Moodle plugins files...\n";
+        $moodle_plugin = self::get_vendor_moodle_plugin();
+        $moodle_public_dir = self::get_moodle_dir() . "/public";
+        foreach (scandir($moodle_plugin) as $plugin_name) {
+            if ($plugin_name[0] === '.') {
+                continue;
+            }
+            $srcPlugin = $moodle_plugin . DIRECTORY_SEPARATOR . $plugin_name;
+            $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
+            self::rrCopy($srcPlugin, $dstPlugin);
+        }
+        echo "✅ Completed copying Moodle plugins files. \n";
+    }
+
+    /**
+     * === END ===
+     */
 }

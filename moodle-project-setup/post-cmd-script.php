@@ -8,6 +8,7 @@
  *   composer update    # automatically runs this script
  *
  */
+
 declare(strict_types=1);
 
 use moodle_project_setup as setup;
@@ -22,7 +23,7 @@ require_once __DIR__ . '/MoodleProjectSetup.php';
 echo "📦 Starting Moodle code manage script... \n";
 
 // check vendor core moodle 
-if (!is_dir(setup::get_vendor_moodle())) {
+if (!is_dir(setup::get_vendor_moodle_core())) {
   echo "❌ Error: Moodle not found in vendor/moodle/moodle \n";
   exit(1);
 }
@@ -32,17 +33,28 @@ if (is_dir(setup::get_moodle_dir())) {
   echo "⚠️ Cleaning existing moodle code directory...\n";
   setup::rrRemove(setup::get_moodle_dir());
   echo "✅ Clean moodle code directory.\n";
+  echo " ---------------------------------------- \n";
 }
 
 // Create web dir i.e Ensure web directory exists
 if (!is_dir(setup::get_moodle_dir())) {
   @mkdir(setup::get_moodle_dir(), 0777, true);
-  echo "✅ Created moodle code directory\n";
+  echo "✅ Created moodle code directory. \n";
 }
 
 // ---------------------------
 // Copy Moodle core
 // ---------------------------
-echo "➡️ Copying Moodle core files...\n";
-setup::rrCopy(setup::get_vendor_moodle(), setup::get_moodle_dir());
-echo "✅ Completed. \n";
+setup::manage_moodle_core_files();
+echo " ---------------------------------------- \n";
+
+// ---------------------------
+// Copy Moodle Plugins
+// ---------------------------
+setup::manage_moodle_plugins_files();
+echo " ---------------------------------------- \n";
+
+/**
+ * 
+ */
+echo " ✅ Completed \n  ";
