@@ -68,6 +68,7 @@ class moodle_project_setup {
             self::get_moodle_dir() . '/theme',
             self::get_moodle_dir() . '/node_modules',
             self::get_moodle_dir() . '.gitignore',
+            self::get_moodle_dir() . 'README.md',
             self::get_moodle_dir() . '.env',
             self::get_moodle_dir() . '.htaccess',
             self::get_moodle_dir() . 'config.php',

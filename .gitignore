@@ -46,6 +46,7 @@ vendor
 !/moodle-project-setup/
 !/public/
 !.gitignore
+!README.md
 
 # ==============================================================
 
