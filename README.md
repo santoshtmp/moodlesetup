@@ -54,7 +54,7 @@ php moodle-project-setup/post-cmd-script.php
 ```
 
 ### Add a new plugin
-1. Add the plugin repository under `repositories` in `composer.json` (for GitHub plugins):
+1. Add the plugin repository under `repositories` in `composer.json` (for GitHub plugins, which does not have composer.json file in the plugin):
 
     ```json
     {
