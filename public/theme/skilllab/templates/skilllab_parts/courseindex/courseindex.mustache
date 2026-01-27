@@ -1,0 +1,13 @@
+{{#courseindex}}
+    {{< theme_skilllab/skilllab_parts/drawer }}
+        {{$id}}theme_skilllab-drawers-courseindex{{/id}}
+        {{$drawerclasses}}drawer drawer-left {{#courseindexopen}}show{{/courseindexopen}}{{/drawerclasses}}
+        {{$drawercontent}}
+            {{{courseindex}}}
+        {{/drawercontent}}
+        {{$drawerpreferencename}}drawer-open-index{{/drawerpreferencename}}
+        {{$drawerstate}}show-drawer-left{{/drawerstate}}
+        {{$tooltipplacement}}right{{/tooltipplacement}}
+        {{$closebuttontext}}{{#str}}closecourseindex, core{{/str}}{{/closebuttontext}}
+    {{/ theme_skilllab/skilllab_parts/drawer}}
+{{/courseindex}}

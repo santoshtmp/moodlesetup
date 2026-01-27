@@ -1,0 +1,97 @@
+body#page-skilllab-time-track-report {
+  .time-track-container {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .course-list {
+    margin-bottom: 16px;
+    a {
+      color: #000000;
+    }
+    a:hover {
+      color: white;
+      text-decoration: none;
+    }
+    div {
+      padding: 8px;
+
+      &:hover {
+        background-color: #3586a5;
+        border-radius: 8px;
+      }
+      &:hover a {
+        color: white;
+      }
+    }
+  }
+
+  div[role="main"],
+  #region-main {
+    background-color: transparent !important;
+  }
+
+  .course-duration-info {
+    padding: 16px;
+    background-color: white;
+    width: 100%;
+    border-radius: 8px;
+    p {
+      outline: 1px solid red;
+    }
+  }
+
+  .course-list {
+    margin-right: 16px;
+  }
+
+  table.particular-course {
+    width: 100%;
+
+    th {
+      border: none !important;
+      white-space: nowrap;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #dee2e6 !important;
+      }
+    }
+
+    thead {
+      background-color: #f7f3eb !important;
+      border: none !important;
+      tr {
+        border: none !important;
+      }
+    }
+    td {
+      padding: 16px 32px !important;
+    }
+    th {
+      padding: 16px 32px !important;
+      a {
+        color: #001e2d;
+      }
+    }
+    tbody tr:nth-of-type(odd) {
+      background-color: white !important;
+    }
+  }
+  .tag-wrapper {
+    display: inline-block;
+  }
+
+  .tag-content {
+    display: flex;
+  }
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+}

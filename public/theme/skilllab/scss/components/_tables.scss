@@ -1,0 +1,154 @@
+#course-list-table {
+  margin: 16px 0;
+  .generaltable th {
+    border: none !important;
+  }
+
+  tbody {
+    .generaltable tr {
+      border-bottom: 1px solid #dee2e6 !important;
+    }
+  }
+
+  thead {
+    background-color: #f7f3eb !important;
+    border: none !important;
+    tr {
+      border: none !important;
+    }
+  }
+  th {
+    padding: 16px 32px !important;
+    a {
+      color: #001e2d;
+    }
+  }
+  .generaltable tbody tr:nth-of-type(odd) {
+    background-color: white !important;
+  }
+  .items-center {
+    display: flex;
+    align-items: center;
+  }
+  .table-name {
+    margin: 0 8px;
+    height: 42px;
+    span {
+      color: #001e2d;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+    }
+    p {
+      color: #36414c;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+.generaltable td {
+  border: none !important;
+}
+.generaltable tbody tr {
+  border: none !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+.generaltable tbody tr:nth-of-type(odd) {
+  background-color: white !important;
+}
+.course-table-content {
+  .generaltable {
+    min-width: 1000px;
+  }
+  overflow-x: auto;
+}
+
+#page-mod-quiz-report {
+  #commands {
+    margin-top: 12px;
+  }
+
+  .generaltable {
+    min-width: 1200px;
+  }
+
+  .generaltable th {
+    border: none !important;
+    white-space: nowrap;
+  }
+
+  tbody {
+    .generaltable tr {
+      border-bottom: 1px solid #dee2e6 !important;
+    }
+  }
+
+  thead {
+    background-color: #f7f3eb !important;
+    border: none !important;
+    tr {
+      border: none !important;
+    }
+  }
+  td {
+    padding: 16px 32px !important;
+  }
+  th {
+    padding: 16px 32px !important;
+    a {
+      color: #001e2d;
+    }
+  }
+  .generaltable tbody tr:nth-of-type(odd) {
+    background-color: white !important;
+  }
+  .items-center {
+    display: flex;
+    align-items: center;
+  }
+  .table-name {
+    margin: 0 8px;
+    height: 42px;
+    span {
+      color: #001e2d;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+    }
+    p {
+      color: #36414c;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+
+body.path-mod-quiz .gradedattempt,
+body.path-mod-quiz table tbody tr.gradedattempt > td {
+  background-color: transparent;
+}
+
+#page-mod-quiz-report {
+  .chart-output-htmltable.generaltable {
+    min-width: auto;
+
+    :nth-child(1) {
+      background-color: #f7f3eb !important;
+    }
+
+    td,
+    th {
+      border: 1px solid #d4aa8f !important;
+    }
+
+    th {
+      background-color: #f7f3eb !important;
+    }
+  }
+}

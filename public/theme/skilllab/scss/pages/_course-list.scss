@@ -1,0 +1,63 @@
+#region-main-box {
+  border-radius: 8px;
+  padding: 0px !important;
+}
+#course-header {
+  display: flex !important;
+  align-items: center;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 32px 0;
+}
+
+#page-skilllab-course-delete {
+  #region-main,
+  div[role="main"] {
+    background: transparent !important;
+  }
+
+  .generalbox.modal {
+    max-width: 622px;
+    height: auto;
+  }
+
+  .modal-content {
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0px 8px 24px 0px rgba(143, 156, 169, 0.15);
+  }
+
+  .modal-header {
+    border-bottom: 0;
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+
+  .mform .felement:not(.form-group) {
+    column-gap: 24px;
+    padding-top: 8px;
+    flex-direction: row-reverse;
+  }
+}
+
+.courses-data-icon {
+  margin-top: 16px;
+  position: relative;
+  height: 100px;
+  svg {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.no-availabe-data {
+  text-align: center;
+  margin-top: 16px;
+}

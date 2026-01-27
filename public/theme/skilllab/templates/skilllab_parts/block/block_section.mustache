@@ -1,0 +1,18 @@
+{{#hasblocks}}
+{{< theme_skilllab/skilllab_parts/drawer }}
+    {{$id}}theme_skilllab-drawers-blocks{{/id}}
+    {{$drawerclasses}}drawer drawer-right{{#blockdraweropen}} show{{/blockdraweropen}}{{/drawerclasses}}
+    {{$drawercontent}}
+        <section class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
+            {{{ addblockbutton }}}
+            {{{ sidepreblocks }}}
+        </section>
+    {{/drawercontent}}
+    {{$drawerpreferencename}}drawer-open-block{{/drawerpreferencename}}
+    {{$forceopen}}{{#forceblockdraweropen}}1{{/forceblockdraweropen}}{{/forceopen}}
+    {{$drawerstate}}show-drawer-right{{/drawerstate}}
+    {{$tooltipplacement}}left{{/tooltipplacement}}
+    {{$drawercloseonresize}}1{{/drawercloseonresize}}
+    {{$closebuttontext}}{{#str}}closeblockdrawer, core{{/str}}{{/closebuttontext}}
+{{/ theme_skilllab/skilllab_parts/drawer}}
+{{/hasblocks}}

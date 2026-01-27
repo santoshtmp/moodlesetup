@@ -1,0 +1,48 @@
+.skillab-loader {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: #f5f5fa;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-spinner {
+  width: 250px;
+  height: 250px;
+
+  svg {
+    width: 90%;
+    height: 100%;
+    fill: none;
+  }
+}
+
+.spinner-load {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 0.7 0.3;
+  stroke-linecap: round;
+  stroke-width: 3px;
+  stroke: #ee6932;
+
+  &.one {
+    animation: load 1.5s infinite ease-in;
+    animation-direction: reverse;
+  }
+
+  &.two {
+    fill: #ee6932;
+  }
+
+  &.three {
+    animation: load 1.5s infinite;
+  }
+}
+
+@keyframes load {
+  100% {
+    transform: rotate(360deg);
+  }
+}

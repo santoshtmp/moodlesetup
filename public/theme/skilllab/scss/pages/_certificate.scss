@@ -1,0 +1,22 @@
+#page-mod-customcert-rearrange {
+  div[role="main"] {
+    padding: 8px 0 !important ;
+  }
+  .buttons {
+    margin-bottom: 16px;
+    display: flex;
+
+    div {
+      float: none;
+    }
+  }
+}
+
+#page-mod-customcert-view {
+  div[role="main"] {
+    h2,
+    .singlebutton {
+      margin-bottom: 8px;
+    }
+  }
+}

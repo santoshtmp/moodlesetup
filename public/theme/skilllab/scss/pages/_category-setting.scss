@@ -1,0 +1,95 @@
+.mform {
+  .form-group {
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: column;
+
+    label {
+      font-size: 14px;
+      color: #36414c;
+      line-height: 1.57;
+    }
+  }
+
+  .col-form-label {
+    padding-left: 0;
+    max-width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .felement {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    flex: 1;
+  }
+
+  input.form-control {
+    width: 100%;
+  }
+
+  .checkbox {
+    max-width: 100%;
+    flex: 1;
+    padding-left: 0;
+    padding-right: 0;
+    .form-check.d-flex {
+      justify-content: flex-start;
+
+      label {
+        margin-bottom: -5px;
+      }
+    }
+  }
+  .col-form-label:has(+ .checkbox) {
+    display: none;
+  }
+}
+
+#fgroup_id_buttonar {
+  margin-left: 0;
+  margin-right: 0;
+  & > .col-form-label {
+    display: none !important;
+  }
+
+  .felement {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    flex: 1;
+    fieldset > .d-flex {
+      max-width: 100%;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.btn-cancel .btn-secondary,
+// modal delete cancel btn
+.modal-footer .btn-secondary,
+.conform-delete .felement > .btn-secondary,
+.login-confirm .buttons  .btn-secondary {
+  padding: 10px 32px;
+  border-radius: 4px;
+  color: #ee6932;
+  border: 1px solid #ee6932;
+}
+
+.conform-delete .felement {
+  gap: 8px;
+}
+
+// pagination on participants
+.userlist .pagination {
+  .initialbarall {
+    background: transparent;
+  }
+
+  #firstinitial_page-item_All,
+  #lastinitial_page-item_All {
+    .page-link {
+      padding: 4px 6px !important;
+    }
+  }
+}

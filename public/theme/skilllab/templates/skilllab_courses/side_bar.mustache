@@ -1,0 +1,12 @@
+{{#courseindex}}
+<div class="course-side-bar">
+    {{{courseindex}}}
+</div>
+{{/courseindex}}
+
+{{#js}}
+require(['theme_skilllab/sidebar/sidebar'],
+function(sidebar) {
+sidebar.init('#course-index-cm-{{cmid}}','{{student_user}}');
+});
+{{/js}}

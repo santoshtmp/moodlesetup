@@ -1,0 +1,94 @@
+{{#filter_done}}
+<div class="filter-info">
+    <style>
+    .filter-info svg {
+        height: 1em;
+    }
+    .cursor-pointer{
+        cursor: pointer;
+    }
+  </style>
+    <ul>
+        {{#search_course}}
+        <li class="filter-tag">
+            Search :
+            <div class="tag-wrapper">
+                <span class="tag-content" data-id="search_input">
+                    {{search_course}}
+                    <span class="ml-1 cursor-pointer clear-filter-item">
+                        {{>
+                        theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon }}
+                    </span>
+                </span>
+            </div>
+        </li>
+        {{/search_course}}
+
+        {{#search_categories_filter}}
+        <li class="category-items filter-tag ">
+            Categories :
+            {{#search_categories}}
+            <div class="tag-wrapper">
+
+                <span class="tag-content" data-id="category_{{id}}">
+                    {{name}}
+                    <span class="ml-1 cursor-pointer clear-filter-item ">
+                        {{>
+                        theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon }}
+                    </span>
+                </span>
+            </div>
+            {{/search_categories}}
+        </li>
+        {{/search_categories_filter}}
+
+        {{#search_skilllevel_filter}}
+        <li class="skilllevel-items filter-tag">
+            Skill level :
+            {{#search_skilllevel}}
+            <div class="tag-wrapper">
+                <span class="tag-content" data-id="skill_level_{{name}}">
+                    {{name}}
+                    <span class="ml-1 cursor-pointer clear-filter-item">
+                        {{>
+                        theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon }}
+                    </span>
+                </span>
+            </div>
+            {{/search_skilllevel}}
+        </li>
+        {{/search_skilllevel_filter}}
+
+        {{#created_date_from}}
+        <li class="filter-tag">
+            Created Date From :
+            <div class="tag-wrapper">
+                <span class="tag-content" data-id="created_date_from">
+                    {{created_date_from}}
+                    <span class="ml-1 cursor-pointer clear-filter-item">
+                        {{>
+                        theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon }}
+                    </span>
+                </span>
+            </div>
+        </li>
+        {{/created_date_from}}
+
+        {{#created_date_to}}
+        <li class="filter-tag">
+            Created Date To :
+            <div class="tag-wrapper">
+                <span class="tag-content" data-id="created_date_to">
+                    {{created_date_to}}
+                    <span class="ml-1 cursor-pointer clear-filter-item">
+                        {{>
+                        theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon }}
+                    </span>
+                </span>
+            </div>
+        </li>
+        {{/created_date_to}}
+
+    </ul>
+</div>
+{{/filter_done}}

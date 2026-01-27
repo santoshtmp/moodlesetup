@@ -1,0 +1,146 @@
+{{#initial_call}}
+<div class="time-track-container">
+    {{/initial_call}}
+
+    {{!
+    the list of course where user time is tracked
+    }}
+    {{#course_list}}
+    <div class="course-list">
+
+        <h3>Course Name</h3>
+        {{#records}}
+        <div class="course-record">
+            <a href="{{path}}?course_id={{course_id}}" data-id="{{course_id}}">
+                {{course_name}}
+            </a>
+        </div>
+        {{/records}}
+
+    </div>
+    {{/course_list}}
+
+    {{!
+    the list of course, users and duration
+    }}
+    {{#particular_course}}
+    <div class="course-duration-info">
+
+        {{#course_name}}
+        <div class="filter-container">
+            <div>Course Name: </div>
+            <div class="tag-wrapper">
+                <div class="tag-content">
+                    <span>{{course_name}}</span>
+                    <div class="ml-1 cursor-pointer clear-filter-item-course ">
+                        <a href="{{path}}">
+                            {{>
+                            theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon
+                            }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{/course_name}}
+        <table class="particular-course">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>User Name</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#records}}
+                <tr>
+                    <td>
+                        {{sno}}
+                    </td>
+                    <td>
+                        <a
+                            href="{{path}}?course_id={{course_id}}&user_id={{user_id}}">
+                            {{user_name}} </a>
+                    </td>
+                    <td>
+                        {{duration}}
+                    </td>
+                </tr>
+                {{/records}}
+            </tbody>
+        </table>
+    </div>
+    {{/particular_course}}
+
+    {{! the list of course, chapter, user and duration }}
+    {{#course_user_activity}}
+    <div class="course-duration-info">
+
+        {{#course_name}}
+        <div class="filter-container">
+            <div>Course Name: </div>
+            <div class="tag-wrapper">
+                <div class="tag-content">
+                    <span><a href="/course/view.php?id={{course_id}}">
+                            {{course_name}} </a> </span>
+                    <div class="ml-1 cursor-pointer clear-filter-item-course ">
+                        <a href="{{path}}">
+                            {{>
+                            theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon
+                            }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/course_name}}
+
+        {{#user_id}}
+        <div class="filter-container">
+            <div>User Name: </div>
+            <div class="tag-wrapper">
+                <div class="tag-content">
+                    <span>{{user_name}}</span>
+                    <div class="ml-1 cursor-pointer clear-filter-item-student ">
+                        <a href="{{path}}?course_id={{course_id}}">
+                            {{>
+                            theme_skilllab/skilllab_parts/skl_svg_icon/cress-icon
+                            }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/user_id}}
+
+        <table class="particular-course">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Course Chapter Name</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#records}}
+                <tr>
+                    <td>
+                        {{sno}}
+                    </td>
+                    <td>
+                        {{course_module_name}}
+                    </td>
+                    <td>
+                        {{duration}}
+                    </td>
+                </tr>
+                {{/records}}
+            </tbody>
+        </table>
+    </div>
+    {{/course_user_activity}}
+
+    {{#final_call}}
+</div>
+{{/final_call}}

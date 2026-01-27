@@ -1,0 +1,66 @@
+<div class="course-category-table-content">
+    <div class="no-overflow">
+        <table id="table_id" class="flexible generaltable generalbox skl-courses-table">
+            <thead>
+                <tr>
+                    {{#table_headers}}
+                    <th>
+                        {{#sort}}
+                        <a data-sortby="{{sort_by}}" data-sortorder="{{sort_order}}" href="{{{sort_url}}}">
+                            {{name}}
+                        </a>
+                        {{/sort}}
+                        {{^sort}}
+                        {{name}}
+                        {{/sort}}
+                    </th>
+                    {{/table_headers}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#table_datas}}
+                <tr>
+                    <td> {{id}}</td>
+                    <td>
+                        {{#shortname}}
+                        <a href="{{url}}">{{name}}</a>
+                        {{/shortname}}
+                    </td>
+                    {{#course_create}}
+                    <td>
+                        {{#action}}
+                        <div class="category-action">
+                            <a href="/category/edit?id={{id}}" class="btn btn-secondary btn-category-edit">
+                            <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+  <path d="M1 13h14v1H1v-1Zm11.7-8.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z" fill="#3586A5"/>
+</svg>
+                            </span>
+                                Edit
+                            </a>
+                            <a href="/category/delete?categoryid={{id}}&action=deletecategory&sesskey={{sesskey}}"
+                                class="btn btn-secondary btn-category-delete">
+
+                                <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+  <path d="M5.625 2.875H5.5a.125.125 0 0 0 .125-.125v.125h4.75V2.75c0 .069.056.125.125.125h-.125V4H11.5V2.75a1 1 0 0 0-1-1h-5a1 1 0 0 0-1 1V4h1.125V2.875ZM13.5 4h-11a.5.5 0 0 0-.5.5V5c0 .069.056.125.125.125h.944l.386 8.172a1 1 0 0 0 .998.953h7.094a.999.999 0 0 0 .998-.953l.386-8.172h.944A.125.125 0 0 0 14 5v-.5a.5.5 0 0 0-.5-.5Zm-2.073 9.125H4.573l-.378-8h7.61l-.378 8Z" fill="#3586A5"/>
+</svg>
+                                </span>
+                                Delete
+                            </a>
+                        </div>
+                        {{/action}}
+                    </td>
+                    {{/course_create}}
+                </tr>
+                {{/table_datas}}
+
+            </tbody>
+        </table>
+        {{#no_data}}
+        {{#status}}
+        <p> No data availabe for {{message}}.</p>
+        {{/status}}
+        {{/no_data}}
+    </div>
+</div>

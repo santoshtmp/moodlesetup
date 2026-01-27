@@ -1,0 +1,86 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template core/navbar
+
+    Navbar template.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * get_items - array of items
+      * has_action - boolean
+      * action - string
+      * get_title - string
+      * get_content - string
+      * is_hidden - boolean
+
+    Example context (json):
+    {
+        "get_items": [
+            {
+                "has_action": true,
+                "action": "#",
+                "get_title": "Test title",
+                "get_content": "First & fresh",
+                "is_hidden": false
+            },
+            {
+                "has_action": true,
+                "action": "#",
+                "get_title": "Second item & a title",
+                "get_content": "Second item",
+                "is_hidden": false
+            },
+            {
+                "has_action": false,
+                "get_content": "Third item",
+                "is_hidden": false
+            },
+            {
+                "has_action": false,
+                "get_content": "Fourth & last",
+                "is_hidden": true
+            }
+        ]
+    }
+}}
+<nav aria-label="{{#str}}breadcrumb, access{{/str}}">
+    <ol class="breadcrumb">
+        {{#get_items}}
+            {{#has_action}}
+                <li class="breadcrumb-item{{#is_hidden}} dimmed_text{{/is_hidden}}">
+                    <a href="{{{action}}}" {{#is_last}}aria-current="page"{{/is_last}} {{#get_title}}title="{{get_title}}"{{/get_title}}>
+                        {{#initial_item}}
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.6667 7.33335H4.76008L7.18008 4.42669C7.29324 4.29054 7.34768 4.11502 7.33143 3.93874C7.31518 3.76245 7.22956 3.59985 7.09342 3.48669C6.95727 3.37353 6.78175 3.31909 6.60547 3.33534C6.42918 3.35159 6.26657 3.43721 6.15341 3.57335L2.82008 7.57335C2.79766 7.60517 2.7776 7.63859 2.76008 7.67335C2.76008 7.70669 2.76008 7.72669 2.71341 7.76002C2.6832 7.83646 2.66738 7.91783 2.66675 8.00002C2.66738 8.08221 2.6832 8.16358 2.71341 8.24002C2.71341 8.27335 2.71341 8.29335 2.76008 8.32669C2.7776 8.36145 2.79766 8.39487 2.82008 8.42669L6.15341 12.4267C6.2161 12.5019 6.29459 12.5625 6.38331 12.6039C6.47203 12.6454 6.56881 12.6668 6.66675 12.6667C6.82252 12.667 6.97347 12.6127 7.09342 12.5134C7.16092 12.4574 7.21672 12.3887 7.25762 12.3111C7.29852 12.2335 7.32372 12.1487 7.33177 12.0613C7.33982 11.974 7.33057 11.886 7.30454 11.8022C7.27851 11.7185 7.23622 11.6407 7.18008 11.5734L4.76008 8.66669H12.6667C12.8436 8.66669 13.0131 8.59645 13.1382 8.47143C13.2632 8.3464 13.3334 8.17683 13.3334 8.00002C13.3334 7.82321 13.2632 7.65364 13.1382 7.52862C13.0131 7.40359 12.8436 7.33335 12.6667 7.33335Z" fill="#3586A5"/>
+                        </svg>
+                        {{/initial_item}}
+                        {{{get_content}}}
+                    </a>
+                </li>
+            {{/has_action}}
+            {{^has_action}}
+                <li class="breadcrumb-item{{#is_hidden}} dimmed_text{{/is_hidden}}"><span>{{{text}}}</span></li>
+            {{/has_action}}
+        {{/get_items}}
+    </ol>
+</nav>
