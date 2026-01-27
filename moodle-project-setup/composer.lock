@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "836e5a43ba4c5129916fe83448c44b9e",
+    "content-hash": "41b512c3d6d5b8b66cfdf79edbd7fb3a",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -150,6 +150,16 @@
                 }
             ],
             "time": "2025-10-04T02:06:25+00:00"
+        },
+        {
+            "name": "moodle_plugin/filter_filtercodes",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michael-milette/moodle-filter_filtercodes.git",
+                "reference": "v2.7.0"
+            },
+            "type": "library"
         },
         {
             "name": "moodle_plugin/local_adminer",
