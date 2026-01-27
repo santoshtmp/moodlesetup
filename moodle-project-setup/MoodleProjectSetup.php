@@ -62,16 +62,17 @@ class moodle_project_setup {
     public static function get_exclude_remove_paths(): array {
         $excludeRemovePath =  [
             realpath(__DIR__ . '/../moodle-project-setup'),
+            self::get_moodle_dir() . '/.git',
             self::get_moodle_dir() . '/public/blocks/yipl',
             self::get_moodle_dir() . '/public/theme/skilllab',
             self::get_moodle_dir() . '/public/theme/yipl',
             self::get_moodle_dir() . '/theme',
             self::get_moodle_dir() . '/node_modules',
-            self::get_moodle_dir() . '.gitignore',
-            self::get_moodle_dir() . 'README.md',
-            self::get_moodle_dir() . '.env',
-            self::get_moodle_dir() . '.htaccess',
-            self::get_moodle_dir() . 'config.php',
+            self::get_moodle_dir() . '/.gitignore',
+            self::get_moodle_dir() . '/README.md',
+            self::get_moodle_dir() . '/.env',
+            self::get_moodle_dir() . '/.htaccess',
+            self::get_moodle_dir() . '/config.php',
         ];
         return array_filter($excludeRemovePath);
     }
