@@ -30,7 +30,7 @@ if (!is_dir(setup::get_vendor_moodle())) {
 // Delete existing web directory entirely before copying core
 if (is_dir(setup::get_moodle_dir())) {
   echo "⚠️ Deleting existing web/ directory...\n";
-  setup::rrRemove(setup::get_moodle_dir(), setup::get_exclude_remove_paths());
+  setup::rrRemove(setup::get_moodle_dir());
   echo "✅ web/ directory cleared.\n";
 }
 

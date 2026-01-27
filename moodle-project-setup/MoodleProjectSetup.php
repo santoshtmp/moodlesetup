@@ -106,6 +106,7 @@ class moodle_project_setup {
         if (!is_dir($src)) {
             return;
         }
+        $excludeRemovePath = self::get_exclude_remove_paths();
         @mkdir($dst, 0777, true);
         foreach (scandir($src) as $item) {
             if ($item === '.' || $item === '..') {
@@ -113,6 +114,11 @@ class moodle_project_setup {
             }
             $srcPath = $src . DIRECTORY_SEPARATOR . $item;
             $dstPath = $dst . DIRECTORY_SEPARATOR . $item;
+
+            if (in_array(realpath($dstPath), $excludeRemovePath, true)) {
+                continue;
+            }
+
             if (is_dir($srcPath)) {
                 self::rrCopy($srcPath, $dstPath);
             } else {
@@ -127,14 +133,13 @@ class moodle_project_setup {
      * skipping excluded files or directories.
      *
      * @param string $dir Directory to remove
-     * @param string[] $excludeRemovePath Absolute paths to exclude
      * @return void
      */
-    public static function rrRemove(string $dir, array $excludeRemovePath) {
+    public static function rrRemove(string $dir) {
         if (!is_dir($dir)) {
             return;
         }
-
+        $excludeRemovePath = self::get_exclude_remove_paths();
         foreach (scandir($dir) as $item) {
             if ($item === '.' || $item === '..') {
                 continue;
