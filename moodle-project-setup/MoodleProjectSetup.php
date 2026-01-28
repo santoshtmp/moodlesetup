@@ -211,7 +211,19 @@ class moodle_project_setup {
                 continue;
             }
             $srcPlugin = $moodle_plugin . DIRECTORY_SEPARATOR . $plugin_name;
-            $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
+            $plugin_name = preg_replace_callback(
+                '/\[(.*?)\]|_/',
+                function ($matches) {
+                    // If it's inside [ ], return content without brackets
+                    if (isset($matches[1])) {
+                        return $matches[1];
+                    }
+                    // Otherwise replace underscore
+                    return '/';
+                },
+                $plugin_name
+            );
+            $dstPlugin = $moodle_public_dir . "/" . $plugin_name;
             self::rrCopy($srcPlugin, $dstPlugin);
         }
         // 
@@ -221,7 +233,19 @@ class moodle_project_setup {
                 continue;
             }
             $srcPlugin = $moodle_custom_plugin . DIRECTORY_SEPARATOR . $plugin_name;
-            $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
+            $plugin_name = preg_replace_callback(
+                '/\[(.*?)\]|_/',
+                function ($matches) {
+                    // If it's inside [ ], return content without brackets
+                    if (isset($matches[1])) {
+                        return $matches[1];
+                    }
+                    // Otherwise replace underscore
+                    return '/';
+                },
+                $plugin_name
+            );
+            $dstPlugin = $moodle_public_dir . "/" . $plugin_name;
             self::rrCopy($srcPlugin, $dstPlugin);
         }
         echo "✅Completed copying Moodle plugins files. " . PHP_EOL;
