@@ -20,41 +20,41 @@ require_once __DIR__ . '/MoodleProjectSetup.php';
 // Start script
 // ---------------------------
 
-echo "📦 Starting Moodle code manage script... \n";
+echo "📦 Starting Moodle code manage script... " . PHP_EOL;
 
 // check vendor core moodle 
 if (!is_dir(setup::get_vendor_moodle_core())) {
-  echo "❌ Error: Moodle not found in vendor/moodle/moodle \n";
+  echo "❌ Error: Moodle not found in vendor/moodle/moodle " . PHP_EOL;
   exit(1);
 }
 
 // Delete existing web directory entirely before copying core
 if (is_dir(setup::get_moodle_dir())) {
-  echo "⚠️ Cleaning existing moodle code directory...\n";
+  echo "⚠️ Cleaning existing moodle code directory..." . PHP_EOL;
   setup::rrRemove(setup::get_moodle_dir());
-  echo "✅Clean moodle code directory.\n";
-  echo " ---------------------------------------- \n";
+  echo "✅Clean moodle code directory." . PHP_EOL;
+  echo " ---------------------------------------- " . PHP_EOL;
 }
 
 // Create web dir i.e Ensure web directory exists
 if (!is_dir(setup::get_moodle_dir())) {
   @mkdir(setup::get_moodle_dir(), 0777, true);
-  echo "✅Created moodle code directory. \n";
+  echo "✅Created moodle code directory. " . PHP_EOL;
 }
 
 // ---------------------------
 // Copy Moodle core
 // ---------------------------
 setup::manage_moodle_core_files();
-echo " ---------------------------------------- \n";
+echo " ---------------------------------------- " . PHP_EOL;
 
 // ---------------------------
 // Copy Moodle Plugins
 // ---------------------------
 setup::manage_moodle_plugins_files();
-echo " ---------------------------------------- \n";
+echo " ---------------------------------------- " . PHP_EOL;
 
 /**
  * 
  */
-echo "✅Completed \n  ";
+echo "✅Completed " . PHP_EOL;

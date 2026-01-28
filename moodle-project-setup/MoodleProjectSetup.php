@@ -102,10 +102,10 @@ class moodle_project_setup {
      * @return void
      */
     function run(string $cmd): void {
-        echo "▶ $cmd\n";
+        echo "▶ $cmd" . PHP_EOL;
         exec($cmd, $output, $status);
         if ($status !== 0) {
-            echo "❌ Command failed\n";
+            echo "❌ Command failed" . PHP_EOL;
             throw new RuntimeException('Command failed: ' . $cmd);
             exit(1);
         }
@@ -145,7 +145,7 @@ class moodle_project_setup {
                 }
             }
         } catch (\Throwable $th) {
-            echo "Error :: " . $th->getMessage() . " \n";
+            echo "Error :: " . $th->getMessage() . " " . PHP_EOL;
             exit(1);
         }
     }
@@ -193,9 +193,9 @@ class moodle_project_setup {
      * 
      */
     public static function manage_moodle_core_files() {
-        echo "➡️ Copying Moodle core files...\n";
+        echo "➡️ Copying Moodle core files..." . PHP_EOL;
         self::rrCopy(self::get_vendor_moodle_core(), self::get_moodle_dir());
-        echo "✅Completed copying Moodle Core files. \n";
+        echo "✅Completed copying Moodle Core files. " . PHP_EOL;
     }
 
 
@@ -203,8 +203,7 @@ class moodle_project_setup {
      * 
      */
     public static function manage_moodle_plugins_files() {
-        echo "➡️ Copying Moodle plugins files...\n";
-        // Manage contributed plugin
+        echo "➡️ Copying Moodle plugins files..." . PHP_EOL;
         $moodle_plugin = self::get_vendor_moodle_plugin();
         $moodle_public_dir = self::get_moodle_public_dir();
         foreach (scandir($moodle_plugin) as $plugin_name) {
@@ -215,7 +214,7 @@ class moodle_project_setup {
             $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
             self::rrCopy($srcPlugin, $dstPlugin);
         }
-        // Manage custom plugin
+        // 
         $moodle_custom_plugin = realpath(__DIR__ . '/moodle_custom_plugins');
         foreach (scandir($moodle_custom_plugin) as $plugin_name) {
             if ($plugin_name[0] === '.') {
@@ -225,7 +224,7 @@ class moodle_project_setup {
             $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
             self::rrCopy($srcPlugin, $dstPlugin);
         }
-        echo "✅Completed copying Moodle plugins files. \n";
+        echo "✅Completed copying Moodle plugins files. " . PHP_EOL;
     }
 
     /**
