@@ -52,7 +52,7 @@ class moodle_project_setup {
      * @return string|false
      */
     public static function get_moodle_public_dir() {
-        return realpath(self::get_moodle_dir() . '/public');
+        return self::get_installed_packages('moodle/moodle', true) > 5.1 ? self::get_moodle_dir() . '/public' : self::get_moodle_dir();
     }
 
     /**
@@ -67,20 +67,33 @@ class moodle_project_setup {
         $excludeRemovePath =  [
             realpath(__DIR__ . '/../moodle-project-setup'),
             self::get_moodle_dir() . '/.git',
-            self::get_moodle_dir() . '/public/blocks/yipl',
-            self::get_moodle_dir() . '/public/theme/skilllab',
-            self::get_moodle_dir() . '/public/theme/yipl',
-            self::get_moodle_dir() . '/theme',
             self::get_moodle_dir() . '/node_modules',
             self::get_moodle_dir() . '/.gitignore',
             self::get_moodle_dir() . '/README.md',
             self::get_moodle_dir() . '/.env',
             self::get_moodle_dir() . '/.htaccess',
             self::get_moodle_dir() . '/config.php',
+            self::get_moodle_public_dir() . '/blocks/yipl',
+            self::get_moodle_public_dir() . '/theme/skilllab',
+            self::get_moodle_public_dir() . '/theme/yipl',
         ];
         return array_filter($excludeRemovePath);
     }
 
+    /**
+     * 
+     */
+    public static function get_installed_packages($packageName = '', $only_version = false) {
+        $installed = require __DIR__ . '/vendor/composer/installed.php';
+        if ($packageName && isset($installed['versions']) && is_array($installed['versions'])) {
+            foreach ($installed['versions'] as $key => $package) {
+                if ($key === $packageName) {
+                    return $only_version ? $package['version'] : $package;
+                }
+            }
+        }
+        return $installed;
+    }
 
     /**
      * Execute a shell command and stop execution on failure.
@@ -182,7 +195,7 @@ class moodle_project_setup {
     public static function manage_moodle_core_files() {
         echo "➡️ Copying Moodle core files...\n";
         self::rrCopy(self::get_vendor_moodle_core(), self::get_moodle_dir());
-        echo "✅ Completed copying Moodle Core files. \n";
+        echo "✅Completed copying Moodle Core files. \n";
     }
 
 
@@ -192,7 +205,7 @@ class moodle_project_setup {
     public static function manage_moodle_plugins_files() {
         echo "➡️ Copying Moodle plugins files...\n";
         $moodle_plugin = self::get_vendor_moodle_plugin();
-        $moodle_public_dir = self::get_moodle_dir() . "/public";
+        $moodle_public_dir = self::get_moodle_public_dir();
         foreach (scandir($moodle_plugin) as $plugin_name) {
             if ($plugin_name[0] === '.') {
                 continue;
@@ -201,7 +214,7 @@ class moodle_project_setup {
             $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
             self::rrCopy($srcPlugin, $dstPlugin);
         }
-        echo "✅ Completed copying Moodle plugins files. \n";
+        echo "✅Completed copying Moodle plugins files. \n";
     }
 
     /**

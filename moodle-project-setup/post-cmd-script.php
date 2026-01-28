@@ -32,14 +32,14 @@ if (!is_dir(setup::get_vendor_moodle_core())) {
 if (is_dir(setup::get_moodle_dir())) {
   echo "⚠️ Cleaning existing moodle code directory...\n";
   setup::rrRemove(setup::get_moodle_dir());
-  echo "✅ Clean moodle code directory.\n";
+  echo "✅Clean moodle code directory.\n";
   echo " ---------------------------------------- \n";
 }
 
 // Create web dir i.e Ensure web directory exists
 if (!is_dir(setup::get_moodle_dir())) {
   @mkdir(setup::get_moodle_dir(), 0777, true);
-  echo "✅ Created moodle code directory. \n";
+  echo "✅Created moodle code directory. \n";
 }
 
 // ---------------------------
@@ -57,4 +57,4 @@ echo " ---------------------------------------- \n";
 /**
  * 
  */
-echo " ✅ Completed \n  ";
+echo "✅Completed \n  ";
