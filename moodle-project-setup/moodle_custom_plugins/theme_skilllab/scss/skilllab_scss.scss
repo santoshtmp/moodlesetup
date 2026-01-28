@@ -1,0 +1,32 @@
+@import "./components/buttons";
+@import "./components/navbar";
+@import "./components/_pagination";
+@import "./components/filter";
+@import "./components/calendar";
+@import "./components/icons";
+@import "./components/_input";
+@import "./components/tables";
+@import "./components/preloader";
+@import "./components/pop-up";
+
+@import "./layouts/main";
+
+@import "./base/typography";
+
+@import "./pages/course-list";
+@import "./pages/course-detail";
+@import "./pages/chapter-detail";
+@import "./pages/add-courses";
+@import "./pages/category-list";
+@import "./pages/course-topic-detail";
+@import "./pages/category-setting";
+@import "./pages/login-page";
+@import "./pages/category-delete";
+@import "./pages/custom-certificate";
+@import "./pages/quiz";
+@import "./pages/user-time-track";
+@import "./pages/404";
+@import "./pages/certificate";
+.outline {
+  outline: 1px solid red !important;
+}

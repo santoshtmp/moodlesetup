@@ -1,0 +1,133 @@
+.navbar.fixed-top {
+  padding: 16px 80px;
+  height: auto !important;
+  border-bottom: none !important;
+  background-color: white;
+
+  @media (max-width: 770px) {
+    padding: 16px 16px;
+  }
+}
+nav {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+.primary-navigation .navigation .nav-link {
+  color: #264653;
+  font-weight: 500;
+}
+
+.dropdown-toggle::after {
+  color: #3586a5;
+}
+
+nav.navbar .logo img {
+  max-height: 48px;
+}
+
+.more-nav {
+  .nav-item {
+    margin: 0 23px;
+  }
+}
+.primary-navigation {
+  margin-left: 64px;
+}
+
+.usermenu {
+  display: flex;
+  text-transform: capitalize;
+  padding: 6px 16px !important;
+  align-items: center;
+  gap: 4px;
+  border-radius: 200px;
+  box-shadow: 0px 8px 24px 0px rgba(143, 156, 169, 0.15);
+  height: 56px;
+  .userbutton {
+    color: #3586a5;
+    font-size: 14px;
+    line-height: 1.57;
+  }
+}
+
+@media (min-width: 768px) {
+  .pagelayout-standard #page.drawers .main-inner,
+  body.limitedwidth #page.drawers .main-inner,
+  body.format-topics #page.drawers .main-inner {
+    max-width: 1300px;
+  }
+}
+nav {
+  .custom-control-input {
+    position: absolute !important;
+  }
+}
+
+#usernavigation {
+  .usermenu-container {
+    position: relative;
+    align-items: center !important;
+  }
+
+  .dropdown-toggle {
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  .usermenu {
+    position: relative;
+    &:has(.dropdown .dropdown-menu-right.show) {
+      border-radius: 30px 30px 0px 0px;
+    }
+  }
+  .dropdown-menu.dropdown-menu-right {
+    box-shadow: 0px 8px 24px 0px rgba(143, 156, 169, 0.15);
+    width: 100%;
+    min-width: 100%;
+    border: 0;
+    border-radius: 0px 0px 8px 8px;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .dropdown {
+    position: unset;
+  }
+
+  .dropdown-item {
+    color: #36414c;
+    font-size: 12px;
+    line-height: 1.66;
+    padding: 12px 24px;
+    border-top: 1px solid #d5dde5;
+  }
+}
+
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:focus-within {
+  background: #eef2f6;
+  color: inherit;
+}
+
+.chevron-down-icon > svg {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  z-index: -5;
+  transform: translateY(-50%);
+}
+.drawercontent,
+.drawerheader {
+  background-color: white;
+}
+.list-group-item {
+  padding: 24px;
+}

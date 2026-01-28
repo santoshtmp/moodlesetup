@@ -204,6 +204,7 @@ class moodle_project_setup {
      */
     public static function manage_moodle_plugins_files() {
         echo "➡️ Copying Moodle plugins files...\n";
+        // Manage contributed plugin
         $moodle_plugin = self::get_vendor_moodle_plugin();
         $moodle_public_dir = self::get_moodle_public_dir();
         foreach (scandir($moodle_plugin) as $plugin_name) {
@@ -211,6 +212,16 @@ class moodle_project_setup {
                 continue;
             }
             $srcPlugin = $moodle_plugin . DIRECTORY_SEPARATOR . $plugin_name;
+            $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
+            self::rrCopy($srcPlugin, $dstPlugin);
+        }
+        // Manage custom plugin
+        $moodle_custom_plugin = realpath(__DIR__ . '/moodle_custom_plugins');
+        foreach (scandir($moodle_custom_plugin) as $plugin_name) {
+            if ($plugin_name[0] === '.') {
+                continue;
+            }
+            $srcPlugin = $moodle_custom_plugin . DIRECTORY_SEPARATOR . $plugin_name;
             $dstPlugin = $moodle_public_dir . "/" . str_replace("_", "/", $plugin_name);
             self::rrCopy($srcPlugin, $dstPlugin);
         }

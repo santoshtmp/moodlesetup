@@ -1,0 +1,27 @@
+.pagination {
+  margin-top: 16px;
+}
+.page-item.active .page-link {
+  background-color: #3586a5 !important;
+  color: white !important;
+}
+.page-link {
+  color: #66737f !important;
+  border: none !important;
+  height: 24px;
+  width: 27px;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  margin: 0 4px;
+}
+
+ul.pagination {
+  border: 1px solid #d5dde5;
+  box-sizing: border-box;
+  padding: 6px !important;
+  border-radius: 2px !important;
+
+  @media (min-width: 786) {
+    height: 36px !important;
+  }
+}

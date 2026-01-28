@@ -1,0 +1,19 @@
+#region-main:has(form.dataformatselector) {
+  .singlebutton {
+    margin-top: 16px;
+
+    & + h3 {
+      margin-top: 16px;
+    }
+  }
+}
+
+// // Edit certificate
+
+// div[role="main"]has:(.loadtemplateform) {
+//   @media (min-width: 768px) {
+//     display: grid;
+//     grid-template-columns: repeat(3, minmax(0, 1fr));
+//     gap: 16px;
+//   }
+// }

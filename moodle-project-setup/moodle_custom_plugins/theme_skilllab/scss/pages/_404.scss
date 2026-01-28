@@ -1,0 +1,29 @@
+#page-skilllab-404 {
+  overflow-y: hidden;
+  #region-main {
+    background-color: transparent;
+  }
+
+  div[role="main"] {
+    background-color: transparent !important;
+  }
+  h3 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #191d23;
+    margin: 8px 0;
+  }
+  p {
+    color: #64748b;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  .container-404 {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}

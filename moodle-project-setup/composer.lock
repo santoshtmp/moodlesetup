@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41b512c3d6d5b8b66cfdf79edbd7fb3a",
+    "content-hash": "3dc9119b2ca0c239bd35cea44b0f37f6",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -152,6 +152,16 @@
             "time": "2025-10-04T02:06:25+00:00"
         },
         {
+            "name": "moodle_plugin/availability_condition_relativedate",
+            "version": "4.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ewallah/moodle-availability_relativedate.git",
+                "reference": "v4.4.1"
+            },
+            "type": "library"
+        },
+        {
             "name": "moodle_plugin/filter_filtercodes",
             "version": "2.7.0",
             "source": {
@@ -192,12 +202,32 @@
             "type": "library"
         },
         {
+            "name": "moodle_plugin/mod_book_tool_wordimport",
+            "version": "1.4.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ecampbell/moodle-booktool_wordimport.git",
+                "reference": "v1.4.14"
+            },
+            "type": "library"
+        },
+        {
             "name": "moodle_plugin/mod_customcert",
-            "version": "5.0.1",
+            "version": "4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mdjnelson/moodle-mod_customcert.git",
-                "reference": "v5.0.1"
+                "reference": "v4.2.10"
+            },
+            "type": "library"
+        },
+        {
+            "name": "moodle_plugin/mod_questionnaire",
+            "version": "4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PoetOS/moodle-mod_questionnaire.git",
+                "reference": "v4.1.1"
             },
             "type": "library"
         },
@@ -212,12 +242,42 @@
             "type": "library"
         },
         {
+            "name": "moodle_plugin/question_format_csv",
+            "version": "5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GopalSharma/moodle-qformat_csv.git",
+                "reference": "v5.0"
+            },
+            "type": "library"
+        },
+        {
+            "name": "moodle_plugin/question_format_wordtable",
+            "version": "3.9.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ecampbell/moodle-qformat_wordtable.git",
+                "reference": "v3.9.7"
+            },
+            "type": "library"
+        },
+        {
+            "name": "moodle_plugin/report_benchmark",
+            "version": "1.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikasmart/moodle-report_benchmark.git",
+                "reference": "v1.5.3"
+            },
+            "type": "library"
+        },
+        {
             "name": "moodle_plugin/report_usercoursereports",
-            "version": "1.1.1",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/santoshtmp/moodle-report_usercoursereports.git",
-                "reference": "v1.1.1"
+                "reference": "v1.0.1"
             },
             "type": "library"
         },

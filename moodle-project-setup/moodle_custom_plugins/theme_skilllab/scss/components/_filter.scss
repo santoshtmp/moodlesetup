@@ -1,0 +1,128 @@
+.filter-container {
+  position: relative;
+  font-size: 14px;
+}
+.filter-btn {
+  border-radius: 8px;
+  border: 1px solid #e7ecf2;
+  background: #f9f9f9;
+  box-shadow: 0px 8px 24px 0px rgba(255, 255, 255, 0.05);
+  height: 36px;
+  width: 40px;
+}
+
+.filter-options-wrapper {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 100%;
+  transform: translateX(-43%);
+  z-index: 100;
+  left: 0;
+  background-color: white;
+  color: #001e2d;
+  padding: 12px 16px;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  min-width: 300px;
+  border: 1px solid #d5dde5;
+  border-radius: 0 0 8px 8px;
+
+  @media (max-width: 470px) {
+    transform: translateX(calc(40px - 100%));
+  }
+
+  &::after {
+    content: " ";
+    background-color: white;
+    border-top: 1px solid #d5dde5;
+    border-left: 1px solid #d5dde5;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    @media (max-width: 470px) {
+      left: calc(100% - 20px);
+    }
+  }
+}
+.hide {
+  display: none !important;
+}
+.filter-title {
+  padding: 8px 0px;
+  font-weight: 600;
+  font-size: 12px;
+  border-bottom: 1px solid rgb(70 168 204);
+}
+.dropdown-title {
+  padding: 8px 0px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tertiary-navigation .navitem {
+  margin-bottom: 0px;
+}
+
+.filter-submit-container {
+  margin-top: 8px;
+  padding: 8px 0;
+  border-top: 1px solid rgb(70 168 204);
+  display: flex;
+  justify-content: end;
+  gap: 16px;
+}
+.date-container {
+  display: flex;
+  margin-right: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.date {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+// filters Result info
+.filter-info {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.filter-tag {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.66;
+  color: #33738c;
+}
+
+.tag-wrapper {
+  background: #33738c;
+  background-image: linear-gradient(90deg, #ee6932, #9e20ff);
+  border: 1px transparent;
+  margin-left: 8px;
+  display: flex;
+  padding: 1px;
+  border-radius: 999px;
+}
+.tag-content {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: linear-gradient(
+      180deg,
+      rgba(238, 105, 50, 0.08),
+      rgba(158, 32, 255, 0.08)
+    ),
+    #fff;
+}
+
+.clear-filter-item svg {
+  color: #264653;
+}

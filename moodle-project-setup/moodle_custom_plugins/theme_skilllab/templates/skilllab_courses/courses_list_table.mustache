@@ -1,0 +1,152 @@
+<div class="course-table-content">
+    <div class="no-overflow">
+        <table id="table_id"
+            class="flexible generaltable generalbox skl-courses-table">
+            <thead>
+                <tr>
+                    {{#table_headers}}
+                    <th>
+                        {{#sort}}
+                        <a data-sortby="{{sort_by}}"
+                            data-sortorder="{{sort_order}}"
+                            href="{{{sort_url}}}">
+                            {{name}}
+                        </a>
+                        {{/sort}}
+                        {{^sort}}
+                        {{name}}
+                        {{/sort}}
+                    </th>
+                    {{/table_headers}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#table_datas}}
+                <tr>
+                    <td> {{id}}</td>
+                    <td>
+                        {{#shortname}}
+                        <div class="course-info  d-flex">
+                            <a class="d-flex items-center"
+                                href="{{{course_url}}}">
+                                <img src="{{course_image}}" alt="course-image"
+                                    style="width:44px;height:44px;">
+                                <div class="table-name">
+                                    <span>{{fullname}}</span>
+                                    <p>{{category_name}}</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        {{/shortname}}
+                    </td>
+                    <td> {{skill_level}}</td>
+
+                    {{#course_create}}
+                    <td> {{no_of_learner}}</td>
+                    <td> {{timecreated}}</td>
+                    <td class="d-flex">
+                        {{#action}}
+                        <a
+                            href="/course/edit.php?id={{action_id}}&returnto=url&returnurl={{returnurl}}&sesskey={{sessKey}}"
+                            class="edit-button">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="none"><path
+                                        fill="#3586A5"
+                                        d="M1 13h14v1H1v-1Zm11.7-8.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5ZM10.2 2 12 3.8l-1.5 1.5-1.8-1.8L10.2 2ZM3 11V9.2l5-5L9.8 6l-5 5H3Z" /></svg>
+                            </span>
+                            <span>Edit</span>
+                        </a>
+                        <a href="/course/delete?id={{action_id}}"
+                            class="delete-button">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="none"><path
+                                        fill="#3586A5"
+                                        d="M5.625 2.875H5.5a.125.125 0 0 0 .125-.125v.125h4.75V2.75c0 .069.056.125.125.125h-.125V4H11.5V2.75a1 1 0 0 0-1-1h-5a1 1 0 0 0-1 1V4h1.125V2.875ZM13.5 4h-11a.5.5 0 0 0-.5.5V5c0 .069.056.125.125.125h.944l.386 8.172a1 1 0 0 0 .998.953h7.094a.999.999 0 0 0 .998-.953l.386-8.172h.944A.125.125 0 0 0 14 5v-.5a.5.5 0 0 0-.5-.5Zm-2.073 9.125H4.573l-.378-8h7.61l-.378 8Z" /></svg>
+                            </span>
+                            <span>Delete</span>
+                        </a>
+                        {{/action}}
+                    </td>
+
+                    {{/course_create}}
+
+                    {{#instructor_view}}
+                    {{/instructor_view}}
+
+                    {{^instructor_view}}
+                    <td> {{enrolled_date}}</td>
+                    <td>
+                        <div class='progress-info'>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info"
+                                    role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="100"
+                                    title="progress-percentage-bar"
+                                    style="width: {{progress_status}}%;"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span
+                                    class="progress-percent">{{{progress_status}}}%
+                                </span>
+                                <span class="progress-section"> Completed
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        {{#action}}
+
+                        {{#status}}
+                        <a href="{{url}}">
+                            Get Certificate
+                        </a>
+                        {{/status}}
+
+                        {{^status}}
+                        <a href="{{url}}">
+                            Resume
+                        </a>
+                        {{/status}}
+
+                        {{/action}}
+                    </td>
+                    {{/instructor_view}}
+
+                </tr>
+                {{/table_datas}}
+
+            </tbody>
+        </table>
+        {{#no_data}}
+        {{#status}}
+        <div class="courses-data-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 215 115">
+                <path
+                    d="M88.281 5.12a2.56 2.56 0 1 0 0-5.12 2.56 2.56 0 0 0 0 5.12ZM47.56 85.089a2.56 2.56 0 1 0 0-5.12 2.56 2.56 0 0 0 0 5.12Zm117-26a2.56 2.56 0 1 0 0-5.12 2.56 2.56 0 0 0 0 5.12Z"
+                    fill="#F49B76" />
+                <path
+                    d="M37.56 45.089a2.56 2.56 0 1 0 0-5.12 2.56 2.56 0 0 0 0 5.12Zm138.402 44.195a2.56 2.56 0 1 0-.001-5.121 2.56 2.56 0 0 0 .001 5.121ZM145.56 13.089a2.56 2.56 0 1 0 0-5.12 2.56 2.56 0 0 0 0 5.12Z"
+                    fill="#FFEDE5" />
+                <path
+                    d="m54.37 17.983-.963 1.209L50 17.177l.963-1.208 3.406 2.014Zm3.554 5.197.851 1.27-3.578 1.779-.85-1.27 3.577-1.78Zm3.705-5.524 1.7.06-.17 3.557-1.7-.06.17-3.557Zm106.124 22.966-1.268 1.59L162 39.56l1.268-1.591 4.485 2.653Zm4.679 6.838 1.12 1.672-4.711 2.344-1.12-1.672 4.711-2.343Zm4.875-7.265 2.238.08-.223 4.682-2.238-.079.223-4.683Z"
+                    fill="#3596BB" />
+                <path opacity=".1"
+                    d="M107.5 115c-59.094 0-107-5.373-107-12s47.906-12 107-12 107 5.373 107 12-47.906 12-107 12Z"
+                    fill="#3596BB" />
+                <path
+                    d="m88.472 45.002-9.93 51.028-1.3 6.68 66.261-.328c2.972-.014 5.614-2.655 6.565-6.577l11.755-48.176c.724-2.978-.867-6.082-3.127-6.082l-67.06.073c-1.48.008-2.776 1.39-3.164 3.382Z"
+                    fill="#DCF1F9" />
+                <path
+                    d="m129.638 36.098 7.016 56.523v.004l.001.005.002.02.005.047.005.043a12.744 12.744 0 0 0 .282 1.49c.236.94.656 2.184 1.393 3.367.739 1.184 1.805 2.322 3.334 3.018 1.147.521 2.527.783 4.183.652-1.141.544-3.328 1.108-7.429 1.024h-.011l-74.563.146c-1.898.005-3.555-1.507-3.809-3.594v-.002L53.535 46.59c-.315-2.52 1.505-4.691 3.792-4.698l42.782-.225.215-.001.147-.156 7.298-7.764.003-.004a3.7 3.7 0 0 1 2.673-1.191h.002l15.379-.051c1.901 0 3.553 1.507 3.812 3.598Z"
+                    fill="#264653" stroke="#80CBE7" />
+            </svg>
+        </div>
+        <p class="no-availabe-data"> No {{course_type}} added yet</p>
+        {{/status}}
+        {{/no_data}}
+    </div>
+</div>

@@ -1,0 +1,25 @@
+// Category List
+#category-list-filter {
+  margin-bottom: 16px;
+}
+
+.manage-courses {
+  justify-content: flex-end;
+}
+
+.course-category-table-content table thead {
+  background: #f7f3eb;
+
+  th {
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
+
+.category-action {
+  a.btn span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+  }
+}

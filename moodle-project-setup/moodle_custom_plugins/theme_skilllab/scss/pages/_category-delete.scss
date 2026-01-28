@@ -1,0 +1,123 @@
+#page-skilllab-category-delete {
+  #page-header {
+    display: none;
+  }
+
+  #region-main,
+  div[role="main"] {
+    background: transparent !important;
+  }
+  div[role="main"] h2 {
+    margin-bottom: 32px;
+  }
+
+  .mform #fgroup_id_buttonar {
+    margin-top: 32px;
+  }
+}
+
+div[role="main"]:has(.delete-action-wrapper) .mform #fitem_id_fulldelete {
+  display: none;
+}
+.category-info {
+  display: flex;
+  padding: 10px 12px;
+  gap: 12px;
+  align-items: center;
+  color: #315d6e;
+  font-size: 14px;
+  line-height: 1.57;
+  // margin-bottom: 24px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  & + .mform {
+    .form-autocomplete-selection {
+      margin: 0;
+      min-height: auto;
+    }
+    #fgroup_id_buttonar {
+      fieldset > .d-flex {
+        justify-content: flex-start;
+        column-gap: 24px;
+
+        form-group {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.delete-action-wrapper {
+  position: relative;
+  .mform {
+    margin-top: 32px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 8px 24px 0px rgba(255, 255, 255, 0.1);
+    padding: 16px 24px;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+
+      #fgroup_id_buttonar {
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+    }
+    #fitem_id_fulldelete {
+      .custom-select {
+        width: 100%;
+      }
+    }
+
+    .form-autocomplete-selection {
+      margin: 0;
+      min-height: auto;
+    }
+
+    #fgroup_id_buttonar {
+      position: absolute;
+      top: 100%;
+      margin-left: -24px;
+      margin-right: -24px;
+      fieldset > .d-flex {
+        justify-content: flex-start;
+        column-gap: 24px;
+
+        form-group {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// Delete Message
+
+.category-info,
+.delete-content-wrapper .alert-success.alert-block {
+  max-width: max-content;
+  font-size: 14px;
+  line-height: 1.57;
+  border-radius: 8px;
+  border: 1px solid #dcf1f9;
+  background: #fff;
+  color: #315d6e;
+  margin-bottom: 8px;
+}
+
+.delete-content-wrapper {
+  .alert {
+    margin-bottom: 0;
+  }
+  .continuebutton {
+    margin-top: 32px;
+    text-align: inherit;
+  }
+}

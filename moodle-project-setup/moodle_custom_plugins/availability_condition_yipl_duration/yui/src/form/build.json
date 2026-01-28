@@ -1,0 +1,10 @@
+{
+  "name": "moodle-availability_yipl_duration-form",
+  "builds": {
+    "moodle-availability_yipl_duration-form": {
+      "jsfiles": [
+        "form.js"
+      ]
+    }
+  }
+}

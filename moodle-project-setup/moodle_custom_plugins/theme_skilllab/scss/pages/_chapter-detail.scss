@@ -1,0 +1,186 @@
+.course-section-header {
+  h3.sectionname {
+    a {
+      color: #264653 !important;
+      font-size: 32px !important;
+      font-weight: 500 !important;
+      line-height: 40px !important;
+    }
+  }
+}
+
+// Course Format
+.mform fieldset .fcontainer.collapseable .col-form-label {
+  padding-left: 0;
+  flex: 1;
+}
+
+.mod-quiz-edit-content {
+  .mod_quiz-edit-top-controls {
+    div {
+      @media (max-width: 800px) {
+        display: block !important;
+      }
+    }
+  }
+}
+
+#page-mod-quiz-edit ul.slots li.section li.activity .mod-indent-outer {
+  @media (max-width: 940px) {
+    display: block !important;
+    padding: 12px;
+  }
+}
+body#page-question-type-multichoice {
+  div.fitem.form-group {
+    background-color: white;
+    border: none;
+  }
+
+  .mform .checkbox .form-check.d-flex {
+    align-items: flex-start;
+  }
+  .felement {
+    fieldset {
+      .d-flex.flex-wrap.align-items-center {
+        align-items: start !important;
+      }
+    }
+  }
+}
+
+#page-mod-quiz-report {
+  .initialbarall {
+    background: transparent;
+  }
+
+  #firstinitial_page-item_All,
+  #lastinitial_page-item_All {
+    .page-link {
+      padding: 4px 6px !important;
+    }
+  }
+}
+
+body#page-question-type-match div[id^="fitem_id_"][id*="subquestions_"],
+body#page-question-type-match div[id^="fitem_id_"][id*="subanswers_"] {
+  background: transparent;
+  border: none;
+}
+
+#page-question-edit {
+  .incourse-wrapper .page-main-content {
+    flex: 1;
+    @media (min-width: 641px) {
+      max-width: calc(100% - 220px);
+    }
+  }
+}
+
+body#page-question-type-shortanswer
+  div[id^="fgroup_id_"][id*="answeroptions_"] {
+  background-color: transparent;
+  border: none;
+}
+
+body#page-question-type-shortanswer div[id^="fitem_id_"][id*="feedback_"] {
+  background: transparent;
+  margin-bottom: 2em;
+  margin-top: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border: none;
+}
+
+div.page-header-headings {
+  div.text-muted {
+    display: none;
+  }
+}
+.tox-editor-container {
+  .tox-statusbar {
+    padding: 8px !important;
+    height: auto !important;
+  }
+}
+#page-question-type-multichoice {
+  #id_combinedfeedbackhdrcontainer,
+  #id_multitriesheader {
+    .tox-tinymce {
+      min-height: 175px;
+    }
+  }
+
+  #fgroup_id_updatebuttonar {
+    .fitem + a {
+      padding: 10px 32px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.57;
+      background: #3586a5;
+    }
+  }
+}
+
+.mform .checkbox .form-check.d-flex {
+  align-items: center;
+}
+
+fieldset {
+  em {
+    margin: 0 8px;
+  }
+}
+
+#id_tagsheadercontainer {
+  .form-autocomplete-selection {
+    width: auto !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.felement:has([data-fieldtype="autocomplete"]) {
+  align-items: center !important;
+  display: flex;
+  align-items: center;
+}
+.form-autocomplete-suggestions {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #8f959e;
+  min-width: 206px;
+  max-height: 20em;
+  overflow: auto;
+  margin: 0.125rem 0 0;
+  padding: 0.5rem 0;
+  z-index: 2;
+  // top: 100%;
+}
+
+div[data-region="mainpage"]#page {
+  overflow: visible !important;
+}
+
+#id_tagsheadercontainer {
+  .form-control {
+    background-color: #f6f7f8 !important;
+    padding-right: 15px;
+    min-width: 100px !important;
+  }
+}
+.form-autocomplete-selection .badge {
+  border-radius: 100px;
+  padding: 4px 8px;
+  background-color: #f6f7f8;
+  border: 1px solid #d5dde5;
+  box-shadow: none !important;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  span {
+    margin: 0 4px;
+  }
+}

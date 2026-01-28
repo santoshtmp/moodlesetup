@@ -1,0 +1,143 @@
+body,
+.main-inner {
+  background-color: #f6f7f8 !important;
+}
+#region-main {
+  padding: 24px !important;
+  background-color: white;
+  border-radius: 8px;
+}
+div[role="main"] {
+  background-color: white !important;
+  border-radius: 8px;
+
+  h2 {
+    color: #264653;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+  }
+  h3 {
+    color: #272d37;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+}
+label {
+  @media (min-width: 1200px) {
+    margin-bottom: -4px;
+  }
+}
+
+.activity-header {
+  margin-top: 16px;
+}
+.ftoggler {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  border-bottom: 1px solid #d5dde5;
+}
+.clearfix.collapsible {
+  border-bottom: 0 !important;
+}
+
+.form-check.d-flex {
+  justify-content: flex-end;
+}
+.course-detail {
+  #region-main {
+    background-color: transparent;
+  }
+}
+
+// remove focus
+.aabtn.focus,
+.aabtn:focus,
+.btn-link.focus,
+.btn-link:focus,
+.nav-link.focus,
+.nav-link:focus,
+.editor_atto_toolbar button.focus,
+.editor_atto_toolbar button:focus,
+.editor_atto_toolbar .atto_toolbar_row.focus,
+.editor_atto_toolbar .atto_toolbar_row:focus,
+[role="button"].focus,
+[role="button"]:focus,
+.list-group-item-action.focus,
+.list-group-item-action:focus,
+input[type="checkbox"].focus,
+input[type="checkbox"]:focus,
+input[type="radio"].focus,
+input[type="radio"]:focus,
+input[type="file"].focus,
+input[type="file"]:focus,
+input[type="image"].focus,
+input[type="image"]:focus,
+.sr-only-focusable.focus,
+.sr-only-focusable:focus,
+a.dropdown-toggle.focus,
+a.dropdown-toggle:focus,
+.modal-dialog[tabindex="0"].focus,
+.modal-dialog[tabindex="0"]:focus,
+.moodle-dialogue-base .closebutton.focus,
+.moodle-dialogue-base .closebutton:focus,
+button.close.focus,
+button.close:focus,
+.form-autocomplete-selection.focus,
+.form-autocomplete-selection:focus,
+[role="treeitem"]:not([aria-expanded="true"]).focus,
+[role="treeitem"]:not([aria-expanded="true"]):focus {
+  box-shadow: none;
+}
+
+.aalink.focus,
+a.focus.autolink,
+.aalink:focus,
+a.autolink:focus,
+#page-footer a:not([class]).focus,
+#page-footer a:not([class]):focus,
+.arrow_link.focus,
+.arrow_link:focus,
+a:not([class]).focus,
+a:not([class]):focus,
+.activityinstance > a.focus,
+.activityinstance > a:focus {
+  outline: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-secondary:focus,
+.btn-secondary.focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+  outline: 0;
+  box-shadow: none;
+  background-color: inherit;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: inherit;
+  border-color: #ee6932;
+  color: #ee6932;
+}
+
+.custom-select:focus {
+  box-shadow: none;
+}
+
+.disable-scroll {
+  overflow: hidden;
+}

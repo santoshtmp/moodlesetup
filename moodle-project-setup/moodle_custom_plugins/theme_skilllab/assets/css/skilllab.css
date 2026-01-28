@@ -1,0 +1,104 @@
+/* // remove some sections. */
+.skilllab_hide {
+  display: none !important;
+}
+
+/* user menu drop-down action */
+#user-action-menu a[href*="/user/preferences.php"],
+#user-action-menu a[href*="/course/switchrole.php"],
+#user-action-menu .dropdown-divider {
+  display: none !important;
+}
+
+/* course custom certificate module setting page */
+#page-mod-customcert-mod form #id_activitycompletionheader {
+  display: none !important;
+}
+
+/* course view page */
+.path-course-view .bulkEnable,
+#theme_skilllab-drawers-courseindex #course-index>div[data-number="0"],
+#theme_skilllab-drawers-courseindex #course-index>div:first-child,
+.course-side-bar #course-index>div[data-number="0"],
+.course-side-bar #course-index>div:first-child,
+.path-course-view #section-0 {
+  display: none !important;
+}
+
+/* course list table remove table reset preference  */
+#course-list-table .resettable {
+  display: none !important;
+}
+
+/* page-course-index-category */
+#page-course-index-category #page-header #page-navbar {
+  display: none !important;
+}
+
+/* theme setting page */
+#page-admin-setting-themesettingskilllab #adminsettings .settingsform>ul .nav-item .nav-link {
+  padding: 10px;
+  border: 1px solid;
+  margin: 0 10px;
+  border-radius: 5PX;
+  box-shadow: none;
+}
+
+/* profile edit page */
+#fitem_id_moodlenetprofile,
+#id_moodle_additional_names,
+#id_moodle_interests,
+#fitem_id_idnumber,
+#fitem_id_institution {
+  display: none !important;
+}
+
+/* course activity setting */
+#page-mod-quiz-mod #id_modstandardgradecontainer #fitem_id_gradecat,
+#page-mod-quiz-mod #id_layouthdrcontainer #form-advanced-div,
+#page-mod-quiz-mod #id_layouthdrcontainer .moreless-actions,
+#page-mod-quiz-mod #id_interactionhdr,
+#page-mod-quiz-mod #id_overallfeedbackhdr,
+/* #id_reviewoptionshdr, */
+#id_display,
+#id_seb,
+#id_security,
+#id_modstandardelshdr,
+#id_tagshdr,
+#id_competenciessection {
+  display: none !important;
+}
+
+/* secondary nav*/
+.secondary-navigation ul li[data-key="grades"],
+.secondary-navigation ul li[data-key="competencies"] {
+  display: none !important;
+}
+
+/* path-question-type page */
+.path-question-type #fitem_id_generalfeedback,
+.path-question-type #id_tagsheader,
+.path-question-type #fitem_id_feedbacktrue,
+.path-question-type #fitem_id_feedbackfalse,
+.path-question-type #id_answerhdrcontainer div[id^='fitem_id_feedback_'],
+.path-question-type #id_combinedfeedbackhdr {
+  display: none !important;
+}
+
+#page-mod-quiz-report .regradebuttons {
+  display: none !important;
+}
+
+.cursor-pointer svg {
+  height: 1em;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+/* media player youtube video ifrme click disable
+.mediaplugin_videojs iframe {
+  pointer-events: none;
+} */

@@ -1,0 +1,83 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_yipl/blocks/course_info
+}}
+
+
+{{#yipl_duration}}
+<div class="yipl_duration">
+    <img src="{{{ output.wwwpath}}}/theme/yipl/pix/icons/time.svg" alt="duration-time-img">
+    
+    <span class="info-label">{{label}}</span> 
+    <span class="info-value">{{value}}</span>
+</div>
+{{/yipl_duration}}
+
+{{#yipl_skill_level}}
+<div class="yipl_skill_level">
+    <img src="{{{ output.wwwpath}}}/theme/yipl/pix/icons/skill-level.svg" alt="skill-level-img">
+    <span class="info-label">{{label}}</span> 
+    <span class="info-value">{{value}}</span>
+</div>
+{{/yipl_skill_level}}
+
+{{#yipl_language}}
+<div class="yipl_language">
+    <img src="{{{ output.wwwpath}}}/theme/yipl/pix/icons/language.svg" alt="language-img">
+    <span class="info-label">{{label}}</span> 
+    <span class="info-value">{{value}}</span>    </div>
+{{/yipl_language}}
+
+{{#yipl_intro_video}}
+{{#value}}
+<div class="yipl_intro_video">
+    <div class="row">
+        <iframe id="about-course-video-iframe"
+            src="{{value}}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+{{/value}}
+{{/yipl_intro_video}}
+
+{{#description_summery}}
+<div class="description_summery">
+    <div class="summary">
+        <div class="no-overflow summary-truncate">
+            {{{value}}}
+        </div>
+    </div>
+</div>
+{{/description_summery}}
+
+{{#yipl_target_audiences}}
+<div class="yipl_target_audiences">
+    <span class="title">{{label}}</span> 
+    <span class="content">{{{value}}}</span>
+</div>
+{{/yipl_target_audiences}}
+
+{{#yipl_learning_objective}}
+<div class="yipl_learning_objective">
+    <span class="content">{{{value}}}</span>
+</div>
+{{/yipl_learning_objective}}
+    

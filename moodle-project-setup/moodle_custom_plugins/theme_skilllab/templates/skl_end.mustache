@@ -1,0 +1,25 @@
+{{#course_side_bar}}
+</div>
+</div>
+{{/course_side_bar}}
+
+</div>
+
+{{> theme_skilllab/skilllab_parts/footer }}
+
+</div>
+
+{{{ output.standard_after_main_region_html }}}
+
+</div>
+
+</body>
+
+</html>
+
+
+{{#js}}
+require(['theme_skilllab/logout/logout_url'], function(logout_url) {
+logout_url.init();
+});
+{{/js}}

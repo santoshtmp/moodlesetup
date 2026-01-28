@@ -1,0 +1,179 @@
+#page.drawers.show-drawer-left:has(.main-inner):has(.incourse-wrapper) {
+  @media (min-width: 992px) {
+    margin-left: 0;
+  }
+}
+
+.courseindex {
+  @media (max-width: 640px) {
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 8px 24px 0px rgba(255, 255, 255, 0.1);
+    padding: 8px;
+  }
+}
+
+.incourse-wrapper {
+  align-items: unset;
+  gap: 24px;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+
+  .page-main-content {
+    flex: 1;
+    max-width: calc(100% - 180px);
+
+    @media (max-width: 640px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.course-side-bar {
+  flex-shrink: 0;
+  max-width: 180px;
+  width: 180px;
+  @media (max-width: 640px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.header-context-wrapper {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.course {
+  #region-main-box {
+    padding: 16px 24px;
+
+    #region-main {
+      background-color: #fff;
+
+      .page-header-headings > div {
+        display: none;
+      }
+
+      .h2 {
+        color: #264653;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px;
+        margin-bottom: 0;
+      }
+
+      .activity-header {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  div[role="main"] {
+    padding: 0 !important;
+  }
+}
+
+.video-js {
+  position: relative;
+
+  button.vjs-big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.activity-navigation {
+  padding-inline: 0;
+  margin-bottom: 0 !important;
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between;
+  }
+}
+
+.path-mod .activity-header .completion-info {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.activity-navigation #prev-activity-link,
+.activity-navigation #next-activity-link {
+  white-space: normal;
+  border-radius: 4px;
+  // border: 1px solid #3586a5;
+  color: #3586a5;
+  font-size: 12px;
+  padding-inline: 32px;
+  line-height: 1.66;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.activity-wrapper {
+  .activityiconcontainer.courseicon {
+    background: #3586a5;
+    width: 24px;
+    height: 24px;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.activityiconcontainer {
+  background: #3586a5;
+  width: auto;
+  height: auto;
+  padding: 8px;
+}
+
+.page-context-header .activityiconcontainer img {
+  width: 16px;
+  height: 16px;
+}
+
+.page-context-header {
+  align-items: center;
+}
+
+#page-course-view-topics {
+  .activitytitle .media-body div.small {
+    display: none;
+  }
+}
+
+#page-course-view-topics {
+  .carousel.flex-fill,
+  .optionscontainer {
+    align-items: unset;
+  }
+  .modchoosercontainer,
+  .carousel-inner {
+    align-items: unset;
+    flex: 1 !important;
+  }
+
+  .optioninfo a.flex-fill {
+    justify-content: unset !important;
+  }
+}
+
+#page-question-bank-exportquestions-export {
+  .form-check.fitem input.form-check-input {
+    width: 15px;
+  }
+
+  label.form-check.fitem {
+    margin-right: 8px;
+  }
+}

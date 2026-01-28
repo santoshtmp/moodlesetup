@@ -1,0 +1,68 @@
+{{! course add or edit page template }}
+
+{{> theme_skilllab/skl_start }}
+<style>
+    #fitem_id_visible,
+    #fitem_id_startdate,
+    #fitem_id_enddate,
+    #fitem_id_idnumber,
+    #id_appearancehdr,
+    #id_filehdr,
+    #id_completionhdr,
+    #id_groups,
+    #id_rolerenaming,
+    #id_tagshdr {
+        display: none !important;
+    }
+    /*  */
+    #id_error_customfield_skill_level,
+    #id_error_customfield_course_duration,
+    #id_error_customfield_course_type{
+        display: none !important;
+    }
+</style>
+<div id="page-content" class="pb-3 d-print-block">
+    <div id="region-main-box">
+        {{#hasregionmainsettingsmenu}}
+        <div id="region-main-settings-menu" class="d-print-none">
+            <div> {{{ regionmainsettingsmenu }}} </div>
+        </div>
+        {{/hasregionmainsettingsmenu}}
+        <section id="region-main" aria-label="{{#str}}content{{/str}}">
+
+            <div class="edit-form">{{#hasregionmainsettingsmenu}}</div>
+            <div class="region_main_settings_menu_proxy"></div>
+            {{/hasregionmainsettingsmenu}}
+            {{{ output.course_content_header }}}
+            {{#headercontent}}
+            {{> core/activity_header }}
+            {{/headercontent}}
+            {{#overflow}}
+            <div class="container-fluid tertiary-navigation">
+                <div class="navitem">
+                    {{> core/url_select}}
+                </div>
+            </div>
+            {{/overflow}}
+            {{{ output.main_content }}}
+            {{{ output.activity_navigation }}}
+            {{{ output.course_content_footer }}}
+
+        </section>
+    </div>
+</div>
+{{> theme_skilllab/skl_end }}
+
+{{#js}}
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+Drawer.init();
+M.util.js_complete('theme_boost/loader');
+});
+{{/js}}
+
+{{#js}}
+require(['theme_skilllab/course/course_edit'], function(course_edit) {
+course_edit.init();
+});
+{{/js}}

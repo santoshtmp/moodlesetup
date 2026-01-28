@@ -1,0 +1,181 @@
+#page-lms-admin-login div[role="main"] {
+  height: 100%;
+}
+
+.login-container h1.login-heading {
+  text-align: center;
+  max-width: 240px;
+  margin: auto;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 32px !important;
+}
+.login-container {
+  width: 500px;
+  height: 470px;
+  border-radius: 8px;
+  border: 1px solid #d5dde5;
+}
+.login-container .login-dropdown-title {
+  margin-bottom: 6px;
+  color: #36414c;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+.login-container {
+  select {
+    position: relative;
+    appearance: none;
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 8px;
+    border: 1px solid #d5dde5;
+    background: #f6f7f8;
+  }
+  .select-container {
+    position: relative;
+    margin-bottom: 24px;
+
+    &::after {
+      content: "\25BC"; /* Unicode character for a downward-pointing arrow */
+      font-size: 10px; /* Adjust the size as needed */
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      pointer-events: none; /* Prevent the arrow from being selectable */
+      color: #3596bb; /* Arrow color */
+      z-index: 1; /* Ensure the arrow appears above the border */
+    }
+  }
+}
+
+#goto-csc-login {
+  width: 100%;
+}
+.pagelayout-login #page {
+  background-image: none !important;
+  background-color: white !important;
+}
+.background-hero-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  .dotted-circle {
+    position: absolute;
+    left: 0;
+    top: 35px;
+  }
+
+  .wave-circle-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .wave-circle-right {
+    position: absolute;
+    right: 0px;
+    top: 164px;
+  }
+
+  .curve-circle {
+    position: absolute;
+    right: 420px;
+    top: 132px;
+  }
+
+  .hexagon {
+    position: absolute;
+    left: 330px;
+    top: 375px;
+  }
+}
+.logo-title-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 16px;
+  justify-content: center;
+  padding-left: 8px;
+  border-left: 1px solid #6cb6b5;
+  .logo-title-text {
+    background-color: white;
+    text-align: center;
+    color: hwb(197 15% 67%);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 18px */
+    letter-spacing: 1.44px;
+  }
+}
+body#page-login-index {
+  background-color: white !important;
+}
+
+.login-site-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  height: 100vh;
+  position: relative;
+  z-index: 100;
+}
+.login-site-info h3 {
+  color: #191d23 !important;
+  text-align: center;
+  font-size: 32px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 40px !important; /* 125% */
+}
+.login-site-info p {
+  color: va #64748b;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 140% */
+}
+
+.login-form-submit .btn {
+  width: 100%;
+}
+
+.login-confirm {
+  height: 100%;
+
+  .modal-content {
+    border-radius: 8px;
+    border: 1px solid#D5DDE5;
+    box-shadow: 0px 8px 24px 0px rgba(143, 156, 169, 0.15);
+  }
+
+  .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 24px;
+  }
+  .singlebutton + .singlebutton {
+    margin-left: 0;
+  }
+}
+
+div[role="main"]:has(.login-confirm) + #page-footer {
+  position: relative;
+  z-index: 5;
+}
