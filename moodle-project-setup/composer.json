@@ -50,11 +50,11 @@
             "type": "package",
             "package": {
                 "name": "moodle_plugin/local_easycustmenu",
-                "version": "1.1.0",
+                "version": "2.0.1",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/santoshtmp/moodle-local_easycustmenu.git",
-                    "reference": "v1.1.0"
+                    "reference": "v2.0.1"
                 }
             }
         },
@@ -62,11 +62,11 @@
             "type": "package",
             "package": {
                 "name": "moodle_plugin/local_customcleanurl",
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/santoshtmp/moodle-local_customcleanurl.git",
-                    "reference": "v1.0.0"
+                    "reference": "v1.1.0"
                 }
             }
         },
@@ -172,8 +172,8 @@
         "moodle_plugin/availability_condition_relativedate": "4.4.1",
         "moodle_plugin/filter_filtercodes": "2.7.0",
         "moodle_plugin/local_adminer": "4.17.2",
-        "moodle_plugin/local_customcleanurl": "1.0.0",
-        "moodle_plugin/local_easycustmenu": "1.1.0",
+        "moodle_plugin/local_customcleanurl": "1.1.0",
+        "moodle_plugin/local_easycustmenu": "2.0.1",
         "moodle_plugin/mod_customcert": "4.2.10",
         "moodle_plugin/mod_questionnaire": "4.1.1",
         "moodle_plugin/mod_vpl": "4.4.1",
